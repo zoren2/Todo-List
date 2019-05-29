@@ -4,72 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About</title>
-
+    <title>ToDo's</title>
+    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
 </head>
 <body>
-
-    <ul>
-    <h1> Todo's </h1>
-    @foreach($todos as $todo)
-        <li>{{$todo->name}}</li>
-    @endforeach
-    </ul>
+    <h1 class="tex-center my-5"> Todo's Page </h1>
+    <div class="card card-default">
+        <div class="card-header">
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach($todos as $todo)
+                        <li class="list-group-item">
+                            {{ $todo->name }}
+                            <button class="btn btn-primary btn-sm float-right"> View </button>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
