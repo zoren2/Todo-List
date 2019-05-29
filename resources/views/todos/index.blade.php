@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>ToDo's</title>
-    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet" />
+    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet"/>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
 <body>
+
+<div class="container">
     <h1 class="tex-center my-5"> Todo's Page </h1>
     <div class="card card-default">
         <div class="card-header">
@@ -18,12 +20,13 @@
                     @foreach($todos as $todo)
                         <li class="list-group-item">
                             {{ $todo->name }}
-                            <button class="btn btn-primary btn-sm float-right"> View </button>
+                            <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">View</a>
                         </li>
                     @endforeach
                 </ul>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
