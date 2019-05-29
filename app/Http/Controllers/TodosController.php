@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class TodosController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         // Fetch all rows from the todo's table from mySQL
         $todos = Todo::all(); // From the Todo's table
         return view('todos.index')->with('todos',$todos);
+    }
+
+    public function show($todoId) {
+        return view('todos.show')->with('todo', Todo::find($todoId));
     }
 }
