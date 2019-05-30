@@ -20,6 +20,15 @@
                                 {{ $todo->name }}
 
                                 <a href="/todos/{{ $todo->id }}" class="btn btn-primary btn-sm float-right">View</a>
+
+
+                                @if($todo->completed === 0)
+                                    <a href="/todos/{{ $todo->id }}/complete"
+                                       class="btn btn-danger btn-sm float-right mx-3">Complete ToDo</a>
+
+                                @else
+                                    <p class="float-right mx-4 my-1 text-success"> Completed </p>
+                                @endif
                             </li>
                         @endforeach
                     </ul>
